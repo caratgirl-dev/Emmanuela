@@ -1,133 +1,345 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#ffd629" />
-  <title>Portfolio en travaux — Emma</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Emmanuela — Développeuse web &amp; mobile</title>
+  <meta name="description" content="Portfolio d’Emmanuela, développeuse web et mobile basée à Abidjan.">
+  <meta name="theme-color" content="#F5D338">
+  <link rel="icon" href="symbole-sablier.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root{--yellow:#ffd629;--black:#171717;--paper:#fffdf4;--muted:#6b675b}
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;min-height:100vh;background:var(--yellow);color:var(--black);font-family:'Space Grotesk',sans-serif;overflow-x:hidden}
-    body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.13;background-image:radial-gradient(#171717 .8px,transparent .8px);background-size:12px 12px;z-index:-1}
-    .tape{height:17px;background:repeating-linear-gradient(135deg,var(--black) 0 18px,var(--yellow) 18px 36px);border-bottom:2px solid var(--black)}
-    header{max-width:1180px;margin:auto;padding:28px 6%;display:flex;justify-content:space-between;align-items:center;gap:16px}
-    .brand{font-family:'Syne',sans-serif;font-weight:800;font-size:1.15rem;letter-spacing:-.04em}
-    .brand span{display:inline-block;background:var(--black);color:var(--yellow);padding:5px 8px;margin-right:7px;transform:rotate(-3deg)}
-    .status{display:flex;align-items:center;gap:9px;font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
-    .dot{width:9px;height:9px;background:#24834a;border-radius:50%;box-shadow:0 0 0 4px #24834a22;animation:pulse 1.7s infinite}
-    main{max-width:1180px;margin:0 auto;padding:42px 6% 75px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:45px;min-height:calc(100vh - 150px)}
-    .eyebrow{display:inline-flex;align-items:center;gap:9px;background:var(--black);color:var(--yellow);padding:9px 13px;font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;transform:rotate(-1deg)}
-    h1{font-family:'Syne',sans-serif;font-size:clamp(3.5rem,8vw,7.5rem);line-height:.88;letter-spacing:-.085em;margin:27px 0 24px;font-weight:800}
-    h1 .outline{color:transparent;-webkit-text-stroke:2px var(--black)}
-    .description{font-size:clamp(1rem,1.5vw,1.15rem);line-height:1.75;max-width:460px;color:#373326}
-    .description strong{color:var(--black)}
-    .actions{display:flex;align-items:center;gap:13px;flex-wrap:wrap;margin-top:28px}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 18px;border:2px solid var(--black);background:var(--black);color:var(--yellow);font:700 .9rem 'Space Grotesk',sans-serif;text-decoration:none;cursor:pointer;transition:transform .2s,box-shadow .2s}
-    .btn:hover{transform:translate(-3px,-3px);box-shadow:5px 5px 0 var(--black)}
-    .btn.secondary{background:transparent;color:var(--black)}
-    .fineprint{margin-top:18px;color:#5d542e;font-size:.78rem}
-    .scene{position:relative;min-height:440px;display:grid;place-items:center}
-    .scene-card{position:relative;width:min(100%,440px);aspect-ratio: .92;background:var(--paper);border:3px solid var(--black);box-shadow:12px 12px 0 var(--black);overflow:hidden;display:flex;align-items:center;justify-content:center}
-    .scene-card::before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,transparent 49.5%,#1717170b 50%,transparent 50.5%);background-size:24px 24px}
-    .corner{position:absolute;top:17px;left:17px;font-size:.68rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;z-index:2}
-    .number{position:absolute;right:17px;top:14px;font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;z-index:2}
-    .construction{width:82%;max-width:340px;position:relative;z-index:1;animation:float 4s ease-in-out infinite}
-    .beam{position:absolute;bottom:0;left:0;right:0;height:23px;background:repeating-linear-gradient(135deg,var(--black) 0 16px,var(--yellow) 16px 32px);border-top:2px solid var(--black)}
-    .sticker{position:absolute;right:-4px;bottom:34px;background:var(--yellow);border:2px solid var(--black);padding:13px 15px;font-family:'Syne',sans-serif;font-size:.85rem;font-weight:800;transform:rotate(7deg);box-shadow:4px 4px 0 var(--black);z-index:3}
-    .floating-tag{position:absolute;left:-15px;top:70px;padding:12px;background:var(--black);color:var(--yellow);font-weight:700;font-size:.75rem;transform:rotate(-8deg);z-index:4}
-    .progress-wrap{margin-top:27px;max-width:420px}
-    .progress-label{display:flex;justify-content:space-between;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
-    .progress{height:10px;border:2px solid var(--black);padding:2px}
-    .progress-fill{height:100%;width:68%;background:var(--black);animation:progress 2.4s ease-in-out infinite alternate}
-    footer{max-width:1180px;margin:auto;padding:0 6% 25px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;font-size:.75rem;font-weight:600;color:#5d542e}
-    .footer-mark{color:var(--black)}
-    @keyframes pulse{50%{opacity:.45;box-shadow:0 0 0 7px #24834a12}}
-    @keyframes float{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-9px) rotate(1deg)}}
-    @keyframes progress{from{width:58%}to{width:73%}}
-    @media(max-width:800px){main{grid-template-columns:1fr;gap:38px;padding-top:28px;min-height:auto}.copy{padding-top:15px}.scene{min-height:360px}.scene-card{max-width:370px}.floating-tag{left:0}h1{font-size:clamp(3.8rem,15vw,6.3rem)}footer{padding-top:15px}}
-    @media(max-width:430px){header{padding-top:22px}.status{font-size:.65rem}.scene{min-height:300px}.scene-card{width:90%;box-shadow:8px 8px 0 var(--black)}.sticker{right:-1px;font-size:.72rem}.description{font-size:.98rem}.btn{width:100%}.actions{align-items:stretch}}
-    @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Gloock&family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="tape" aria-hidden="true"></div>
-  <header>
-    <div class="brand"><span>EM.</span> PORTFOLIO</div>
-    <div class="status"><span class="dot"></span> Site en construction</div>
-  </header>
 
-  <main>
-    <section class="copy">
-      <div class="eyebrow">⚠️ Zone de travaux créatifs</div>
-      <h1>Portfolio<br><span class="outline">en travaux.</span></h1>
-      <p class="description">Je suis en train de construire quelque chose de solide. <strong>Mes projets, mes idées et un peu de magie numérique</strong> arrivent bientôt ici. Repasse très vite !</p>
-      <div class="progress-wrap" aria-label="Avancement décoratif du chantier">
-        <div class="progress-label"><span>Construction en cours</span><span>...</span></div>
-        <div class="progress"><div class="progress-fill"></div></div>
+  <!-- ===== Symboles réutilisables ===== -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-mark" viewBox="0 0 509 1095">
+      <circle cx="254.7" cy="497.2" r="121.3" style="fill: var(--dot)"/>
+      <path d="M210 610 L199 632 L177 664 L145 700 L89 757 L69 779 L43 813 L32 831 L20 856 L11 886 L9 907 L8 908 L8 935 L9 936 L11 958 L15 974 L20 989 L29 1008 L46 1033 L69 1055 L85 1066 L98 1073 L125 1083 L147 1088 L161 1089 L162 1090 L193 1091 L194 1090 L210 1089 L224 1085 L241 1076 L241 964 L227 969 L212 972 L178 973 L149 967 L134 961 L116 950 L93 927 L86 916 L81 905 L75 881 L75 869 L74 868 L75 850 L79 831 L86 812 L96 793 L108 775 L128 750 L182 689 L201 664 L217 638 L227 616 L216 612 L213 612Z M505 635 L504 628 L499 615 L485 590 L465 563 L448 546 L470 523 L485 502 L499 477 L504 464 L505 457 L476 480 L434 505 L393 525 L371 534 L345 543 L331 546 L345 549 L366 556 L402 571 L434 587 L476 612Z M4 457 L8 472 L24 502 L39 523 L61 546 L39 569 L24 590 L10 615 L4 635 L33 612 L57 597 L105 572 L143 556 L148 555 L143 546 L139 534 L103 519 L57 495 L33 480Z M318 4 L317 5 L306 5 L305 6 L295 7 L276 14 L268 19 L268 131 L291 124 L297 124 L305 122 L329 122 L330 123 L344 124 L356 127 L370 132 L384 139 L397 148 L412 163 L423 179 L428 190 L432 203 L433 213 L434 214 L434 225 L435 226 L434 246 L431 261 L426 276 L416 297 L391 333 L326 407 L312 425 L298 446 L289 462 L289 464 L281 480 L274 502 L274 506 L271 516 L270 530 L269 531 L269 563 L270 564 L272 584 L276 600 L279 606 L282 617 L291 636 L300 652 L327 689 L381 750 L401 775 L413 793 L423 812 L430 831 L434 850 L434 862 L435 863 L434 881 L431 896 L424 914 L412 932 L397 947 L386 955 L375 961 L360 967 L331 973 L304 973 L303 972 L297 972 L282 969 L268 964 L268 1076 L285 1085 L299 1089 L315 1090 L316 1091 L331 1091 L332 1090 L355 1089 L381 1084 L411 1073 L439 1056 L463 1033 L480 1008 L489 989 L494 974 L498 958 L500 937 L501 936 L501 907 L500 906 L498 886 L494 870 L491 864 L488 853 L480 836 L464 810 L440 779 L421 758 L350 685 L321 649 L307 627 L300 613 L297 603 L293 595 L287 568 L286 537 L287 536 L287 527 L288 526 L289 515 L298 487 L309 465 L330 434 L350 410 L422 336 L440 316 L457 295 L476 266 L488 242 L494 225 L498 209 L500 189 L501 188 L501 159 L500 158 L498 137 L494 121 L485 97 L472 74 L463 62 L446 45 L422 28 L406 20 L387 13 L362 7 L355 7 L346 5Z M191 4 L163 5 L162 6 L147 7 L122 13 L103 20 L87 28 L63 45 L46 62 L35 77 L25 95 L15 121 L11 137 L9 159 L8 160 L8 187 L9 188 L11 209 L15 225 L29 259 L39 276 L52 295 L77 325 L164 416 L178 403 L178 401 L122 338 L108 320 L96 302 L86 283 L79 264 L75 245 L74 227 L75 226 L75 214 L76 213 L77 203 L81 190 L86 181 L86 179 L97 163 L112 148 L125 139 L139 132 L153 127 L165 124 L179 123 L180 122 L204 122 L205 123 L218 124 L241 131 L241 19 L233 14 L214 7 L204 6 L203 5 L192 5Z" fill="currentColor" fill-rule="evenodd"/>
+    </symbol>
+    <symbol id="i-sparkle" viewBox="0 0 40 40">
+      <path d="M20 0C22 14 26 18 40 20C26 22 22 26 20 40C18 26 14 22 0 20C14 18 18 14 20 0Z" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-notes" viewBox="0 0 24 24">
+      <path d="M5 8h14M5 12h14M5 16h9" fill="none" stroke="#000000" stroke-width="2.2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-sweets" viewBox="0 0 24 24">
+      <circle cx="7" cy="15" r="4.2" fill="#F5D338"/>
+      <circle cx="17" cy="15" r="4.2" fill="#FCFCFA"/>
+      <circle cx="12" cy="7.5" r="4.2" fill="#F5D338"/>
+    </symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24">
+      <rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="#000000" stroke-width="2"/>
+      <path d="M3 7l9 6 9-6" fill="none" stroke="#000000" stroke-width="2"/>
+    </symbol>
+    <symbol id="i-x" viewBox="0 0 10 10"><path d="M2 2l6 6M8 2L2 8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-min" viewBox="0 0 10 10"><path d="M2 5h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-max" viewBox="0 0 10 10"><path d="M2.5 2.5h5v5h-5z" fill="none" stroke="currentColor" stroke-width="1.4"/></symbol>
+  </svg>
+
+  <!-- ===================== ÉCRAN DE VERROUILLAGE ===================== -->
+  <div class="lock" id="lock" role="dialog" aria-modal="true" aria-label="Écran de verrouillage">
+    <svg class="lock__mark" aria-hidden="true"><use href="#i-mark"/></svg>
+    <p class="lock__date" data-date></p>
+    <p class="lock__time" data-time></p>
+
+    <div class="notif">
+      <span class="tile tile--yellow" aria-hidden="true"><span class="tile__text">e.</span></span>
+      <div>
+        <p class="notif__head"><strong>Emmanuela</strong><span>maintenant</span></p>
+        <p class="notif__text">Bienvenue sur mon portfolio ! Développeuse web &amp; mobile, à Abidjan.</p>
       </div>
-      <div class="actions">
-        <a class="btn" href="mailto:hello@example.com" id="contactBtn">Me contacter <span aria-hidden="true">↗</span></a>
-        <button class="btn secondary" id="surpriseBtn" type="button">Petit coup de klaxon <span aria-hidden="true">↗</span></button>
+    </div>
+
+    <button class="lock__hint" id="unlock" type="button">
+      <span class="only-touch">Glisse vers le haut pour déverrouiller</span>
+      <span class="only-desk">Clique ou appuie sur Entrée pour déverrouiller</span>
+    </button>
+  </div>
+
+  <!-- ===================== SYSTÈME ===================== -->
+  <div class="os" id="os">
+
+    <!-- Fond d'écran -->
+    <div class="wallpaper" aria-hidden="true">
+      <div class="wallpaper__pattern" id="pattern"></div>
+      <svg class="sparkle" style="left: 14%; top: 22%; width: 44px; height: 44px"><use href="#i-sparkle"/></svg>
+      <svg class="sparkle sparkle--white" style="right: 16%; top: 30%; width: 60px; height: 60px"><use href="#i-sparkle"/></svg>
+      <svg class="sparkle" style="right: 26%; bottom: 30%; width: 26px; height: 26px"><use href="#i-sparkle"/></svg>
+      <svg class="wallpaper__mark"><use href="#i-mark"/></svg>
+    </div>
+
+    <!-- Barre de menu -->
+    <header class="menubar">
+      <a class="menubar__logo" id="logo" href="#" aria-label="Emmanuela, retour au bureau">
+        <img src="images/logo emma.png" alt="">
+        <span class="logo-fallback" aria-hidden="true">e<span></span></span>
+      </a>
+      <span class="menubar__app" id="active-app">Bureau</span>
+      <nav class="menubar__menu" aria-label="Menu">
+        <button type="button" data-open="apropos">À propos</button>
+        <button type="button" data-open="projets">Projets</button>
+        <button type="button" data-open="contact">Contact</button>
+      </nav>
+      <div class="menubar__right">
+        <span class="clock-long" data-clock-long></span>
+        <span class="clock-short" data-clock-short></span>
+        <svg viewBox="0 0 24 12" aria-hidden="true"><rect x="1" y="1" width="19" height="10" rx="3" fill="none" stroke="#000000" stroke-width="1.5"/><rect x="3" y="3" width="13" height="6" rx="1.5" fill="#000000"/><rect x="21" y="4" width="2" height="4" rx="1" fill="#000000"/></svg>
       </div>
-      <p class="fineprint" id="message" aria-live="polite">En attendant, les idées prennent forme.</p>
-    </section>
+    </header>
 
-    <section class="scene" aria-label="Illustration de chantier">
-      <div class="floating-tag">DESIGN × CODE</div>
-      <div class="scene-card">
-        <div class="corner">Projet en cours / 001</div>
-        <div class="number">EM—26</div>
-        <svg class="construction" viewBox="0 0 360 370" role="img" aria-labelledby="svgTitle svgDesc" xmlns="http://www.w3.org/2000/svg">
-          <title id="svgTitle">Casque de chantier et outils</title><desc id="svgDesc">Illustration graphique jaune et noire représentant un casque de chantier au-dessus d'un cône de signalisation.</desc>
-          <g stroke="#171717" stroke-width="7" stroke-linejoin="round" stroke-linecap="round">
-            <path d="M72 153a108 108 0 0 1 216 0v22H72z" fill="#ffd629"/>
-            <path d="M169 46v83" fill="none" stroke-width="11"/>
-            <path d="M54 160h252v27H54z" fill="#ffd629"/>
-            <path d="M86 187h188l-20 25H106z" fill="#171717"/>
-            <path d="M126 227h108l31 107H95z" fill="#ffd629"/>
-            <path d="M111 279h138l8 28H103z" fill="#171717"/>
-            <path d="M83 334h194v20H83z" fill="#ffd629"/>
-          </g>
-          <g fill="#171717"><path d="M140 237h80l8 25h-96z"/><path d="M130 315h100l4 14H126z"/></g>
-          <g stroke="#171717" stroke-width="5" stroke-linecap="round" fill="none"><path d="M36 93l-15-15M45 66l-5-23M304 93l15-15M295 66l5-23"/></g>
-          <g transform="translate(258 218) rotate(18)"><path d="M0 0l16-15 16 15-7 7-9-8-9 8z" fill="#ffd629" stroke="#171717" stroke-width="4"/><path d="M16 7v48" stroke="#171717" stroke-width="7" stroke-linecap="round"/><path d="M3 54h26" stroke="#171717" stroke-width="7" stroke-linecap="round"/></g>
-          <g transform="translate(46 220) rotate(-17)"><path d="M0 0h24v70H0z" fill="#ffd629" stroke="#171717" stroke-width="5"/><path d="M-8 0h40v12H-8z" fill="#171717"/><path d="M-8 70h40v13H-8z" fill="#171717"/></g>
-        </svg>
-        <div class="sticker">BIENTÔT<br>DISPONIBLE !</div>
-        <div class="beam" aria-hidden="true"></div>
+    <main class="desktop" id="desktop">
+      <h1 class="sr-only">Portfolio d’Emmanuela, développeuse web et mobile</h1>
+
+      <!-- Légende du fond d'écran -->
+      <div class="wallpaper__caption" aria-hidden="true">
+        <div class="wallpaper__tags">
+          <span class="oval tilt-l">Emmanuela</span>
+          <span class="oval tilt-r">Développeuse web &amp; mobile</span>
+        </div>
+        <p class="wallpaper__hint"></p>
       </div>
-    </section>
-  </main>
 
-  <footer><span>© <span id="year"></span> EMMA — Chaque ligne de code compte.</span><span class="footer-mark">FAIT AVEC DES IDÉES ET DU CAFÉ.</span></footer>
-  <script>
-    const year = document.querySelector('#year');
-    const message = document.querySelector('#message');
-    const surpriseBtn = document.querySelector('#surpriseBtn');
-    const contactBtn = document.querySelector('#contactBtn');
-    year.textContent = new Date().getFullYear();
+      <!-- Icônes du bureau / écran d'accueil -->
+      <div class="icons" role="list">
+        <button class="icon" type="button" data-open="apropos" role="listitem">
+          <span class="tile tile--notes" aria-hidden="true"><svg><use href="#i-notes"/></svg></span>
+          <span class="icon__label">À propos</span>
+        </button>
+        <button class="icon" type="button" data-open="projets" role="listitem">
+          <span class="tile tile--yellow" aria-hidden="true"><span class="tile__text">{ }</span></span>
+          <span class="icon__label">Projets</span>
+        </button>
+        <button class="icon" type="button" data-open="delices" role="listitem">
+          <span class="tile tile--black" aria-hidden="true"><svg><use href="#i-sweets"/></svg></span>
+          <span class="icon__label">Les Délices des 3A</span>
+        </button>
+        <button class="icon" type="button" data-open="contact" role="listitem">
+          <span class="tile tile--white" aria-hidden="true"><svg><use href="#i-mail"/></svg></span>
+          <span class="icon__label">Contact</span>
+        </button>
+        <button class="icon" type="button" data-open="terminal" role="listitem">
+          <span class="tile tile--black" aria-hidden="true"><span class="tile__mono">&gt;_</span></span>
+          <span class="icon__label">Terminal</span>
+        </button>
+        <!-- Mets ton CV dans le dossier sous le nom cv.pdf -->
+        <a class="icon" href="cv.pdf" download role="listitem">
+          <span class="tile tile--white" aria-hidden="true"><span class="tile__text">CV</span></span>
+          <span class="icon__label">CV.pdf</span>
+        </a>
+      </div>
 
-    // Remplace cette adresse par ton adresse e-mail professionnelle.
-    contactBtn.href = 'mailto:tonadresse@email.com?subject=Contact%20depuis%20ton%20portfolio';
+      <!-- =============== FENÊTRE : À PROPOS =============== -->
+      <section class="window" id="win-apropos" data-title="À propos" data-x="150" data-y="24" style="--w: 680px; --h: 560px" role="dialog" aria-labelledby="t-apropos" hidden>
+        <div class="window__bar" data-drag>
+          <div class="lights">
+            <button class="light light--close" type="button" data-action="close" aria-label="Fermer"><svg><use href="#i-x"/></svg></button>
+            <button class="light light--min" type="button" data-action="min" aria-label="Réduire"><svg><use href="#i-min"/></svg></button>
+            <button class="light light--max" type="button" data-action="max" aria-label="Agrandir"><svg><use href="#i-max"/></svg></button>
+          </div>
+          <button class="window__back" type="button" data-action="close">‹ Accueil</button>
+          <h2 class="window__title" id="t-apropos">À propos</h2>
+        </div>
+        <div class="window__body notes" tabindex="-1">
+          <nav class="notes__side" aria-label="Notes">
+            <p>NOTES</p>
+            <button class="notes__link is-active" type="button" data-note="note-bonjour">Bonjour !</button>
+            <button class="notes__link" type="button" data-note="note-competences">Compétences</button>
+            <button class="notes__link" type="button" data-note="note-parcours">Parcours</button>
+            <button class="notes__link" type="button" data-note="note-business">Côté business</button>
+          </nav>
+          <div class="notes__page">
+            <section id="note-bonjour">
+              <figure class="polaroid" style="margin-top: 4px">
+                <span class="tape" aria-hidden="true"></span>
+                <div class="polaroid__photo">
+                  <img src="images/lock.jpg" alt="">
+                </div>
+                <figcaption class="polaroid__name">Emmanuela</figcaption>
+              </figure>
+              <h3>Salut !</h3>
+              <p>Moi c’est <span class="mark">Emmanuela</span>, <span class="mark">développeuse web et mobile</span> basée à Abidjan et étudiante à l’IFRAN.</p>
+              <p>Mon terrain de jeu : transformer une idée en <span class="mark">expérience aboutie</span>. Le code fait fonctionner le projet, le petit détail en plus le rend mémorable. C’est ce point jaune que je cherche partout.</p>
+            </section>
 
-    const messages = [
-      'BIP BIP ! Les travaux avancent, repasse bientôt.',
-      'Un peu de code, beaucoup d’idées : ça prend forme !',
-      'Casque sur la tête, clavier sous les doigts. On construit !',
-      'Le chantier est ouvert. Le résultat arrive bientôt.'
-    ];
-    let messageIndex = 0;
-    surpriseBtn.addEventListener('click', () => {
-      messageIndex = (messageIndex + 1) % messages.length;
-      message.textContent = messages[messageIndex];
-      surpriseBtn.querySelector('span').textContent = '✓';
-      window.setTimeout(() => { surpriseBtn.querySelector('span').textContent = '↗'; }, 650);
-    });
-  </script>
+            <section id="note-competences">
+              <h3>Compétences</h3>
+              <div class="chips">
+                <span class="chip chip--yellow">[HTML/CSS]</span>
+                <span class="chip chip--black">[Laravel]</span>
+                <span class="chip">[JavaScript]</span>
+                <span class="chip chip--yellow">[PHP]</span>
+                <span class="chip chip--black">[Figma]</span>
+              </div>
+              <p style="margin-top: 14px">Développement web, développement mobile et design d’interface.</p>
+            </section>
+
+            <section id="note-parcours">
+              <h3>Parcours</h3>
+              <div class="timeline">
+                <div>
+                  <p class="timeline__date">[2024] – aujourd’hui</p>
+                  <p class="timeline__role">Étudiante en développement web &amp; mobile</p>
+                  <p>IFRAN, Abidjan</p>
+                </div>
+                <div>
+                  <p class="timeline__date">[2026] – aujourd’hui</p>
+                  <p class="timeline__role">Cofondatrice</p>
+                  <p>Les Délices des 3A</p>
+                </div>
+                <div>
+                  <p class="timeline__date">[2021] - [2024]</p>
+                  <p class="timeline__role">Baccalauréat A2</p>
+                  <p>Lycée Classique D'Abidjan</p>
+                </div>
+              </div>
+            </section>
+
+            <section id="note-business">
+              <h3>Côté business</h3>
+              <p>Entrepreneure dans l’âme, je suis également <span class="mark">cofondatrice de Les Délices des 3A</span>, une pâtisserie en ligne spécialisée en mignardises.</p>
+              <p style="margin-top: 18px"><button class="btn btn--black" type="button" data-open="delices">Ouvrir l’app Les Délices des 3A</button></p>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============== FENÊTRE : PROJETS =============== -->
+      <section class="window" id="win-projets" data-title="Projets" data-x="240" data-y="44" style="--w: 780px; --h: 580px" role="dialog" aria-labelledby="t-projets" hidden>
+        <div class="window__bar" data-drag>
+          <div class="lights">
+            <button class="light light--close" type="button" data-action="close" aria-label="Fermer"><svg><use href="#i-x"/></svg></button>
+            <button class="light light--min" type="button" data-action="min" aria-label="Réduire"><svg><use href="#i-min"/></svg></button>
+            <button class="light light--max" type="button" data-action="max" aria-label="Agrandir"><svg><use href="#i-max"/></svg></button>
+          </div>
+          <button class="window__back" type="button" data-action="close">‹ Accueil</button>
+          <h2 class="window__title" id="t-projets">Projets</h2>
+        </div>
+        <div class="window__body" tabindex="-1">
+          <div class="photos" id="photos"><!-- rempli par script.js --></div>
+        </div>
+      </section>
+
+      <!-- =============== FENÊTRE : LES DÉLICES DES 3A =============== -->
+      <section class="window" id="win-delices" data-title="Les Délices des 3A" data-x="360" data-y="64" style="--w: 500px; --h: 560px" role="dialog" aria-labelledby="t-delices" hidden>
+        <div class="window__bar" data-drag>
+          <div class="lights">
+            <button class="light light--close" type="button" data-action="close" aria-label="Fermer"><svg><use href="#i-x"/></svg></button>
+            <button class="light light--min" type="button" data-action="min" aria-label="Réduire"><svg><use href="#i-min"/></svg></button>
+            <button class="light light--max" type="button" data-action="max" aria-label="Agrandir"><svg><use href="#i-max"/></svg></button>
+          </div>
+          <button class="window__back" type="button" data-action="close">‹ Accueil</button>
+          <h2 class="window__title" id="t-delices">Les Délices des 3A</h2>
+        </div>
+        <div class="window__body" tabindex="-1">
+          <div class="biz">
+            <span class="oval tilt-l">Côté business</span>
+            <h3>Entrepreneure dans l’âme</h3>
+            <p>Je suis également cofondatrice de <span class="mark" style="background: var(--white)">Les Délices des 3A</span>, une pâtisserie en ligne spécialisée en mignardises.</p>
+            <div class="biz__card">
+              <span class="biz__badge">Cofondatrice</span>
+              <div class="biz__dots" aria-hidden="true">
+                <span style="background: #F5D338"></span>
+                <span style="background: #000000"></span>
+                <span style="background: #FCFCFA"></span>
+              </div>
+              <p class="biz__name">Les Délices des 3A</p>
+              <p class="biz__desc">Pâtisserie en ligne, mignardises</p>
+              <a class="btn btn--black" href="https://www.instagram.com/les_delices_des_3a?utm_source=ig_web_button_share_sheet&srtk=ZDNlZDc0MzIxNw%3D%3D" target="_blank" rel="noopener">Voir la boutique</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============== FENÊTRE : CONTACT =============== -->
+      <section class="window" id="win-contact" data-title="Contact" data-x="440" data-y="34" style="--w: 540px; --h: 540px" role="dialog" aria-labelledby="t-contact" hidden>
+        <div class="window__bar" data-drag>
+          <div class="lights">
+            <button class="light light--close" type="button" data-action="close" aria-label="Fermer"><svg><use href="#i-x"/></svg></button>
+            <button class="light light--min" type="button" data-action="min" aria-label="Réduire"><svg><use href="#i-min"/></svg></button>
+            <button class="light light--max" type="button" data-action="max" aria-label="Agrandir"><svg><use href="#i-max"/></svg></button>
+          </div>
+          <button class="window__back" type="button" data-action="close">‹ Accueil</button>
+          <h2 class="window__title" id="t-contact">Nouveau message</h2>
+        </div>
+        <div class="window__body" tabindex="-1">
+          <form class="mail" id="mail-form">
+            <div class="mail__toolbar">
+              <p>Parlons de ton projet.</p>
+              <button class="btn btn--black" type="submit">Envoyer</button>
+            </div>
+            <div class="mail__row"><span>À</span><strong data-email></strong></div>
+            <div class="mail__row">
+              <label for="mail-name">De</label>
+              <input id="mail-name" name="name" type="text" autocomplete="name" placeholder="Ton nom" required>
+            </div>
+            <div class="mail__row">
+              <label for="mail-subject">Objet</label>
+              <input id="mail-subject" name="subject" type="text" placeholder="Ex. : un site pour ma marque" required>
+            </div>
+            <label class="sr-only" for="mail-body">Message</label>
+            <textarea class="mail__body" id="mail-body" name="body" placeholder="Raconte-moi ton idée…" required></textarea>
+            <p class="mail__status" id="mail-status" role="status"></p>
+            <div class="mail__links">
+              <span>Ou retrouve-moi sur</span>
+              <a href="https://www.linkedin.com/in/marie-emmanuela-kouman-zip" target="_blank" rel="noopener">LinkedIn</a>
+              <a href="https://www.instagram.com/its.emma.zip" target="_blank" rel="noopener">Instagram</a>
+              <a href="https://wa.me/225014040855" target="_blank" rel="noopener">WhatsApp</a>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- =============== FENÊTRE : TERMINAL =============== -->
+      <section class="window" id="win-terminal" data-title="Terminal" data-x="300" data-y="120" style="--w: 620px; --h: 400px" role="dialog" aria-labelledby="t-terminal" hidden>
+        <div class="window__bar" data-drag>
+          <div class="lights">
+            <button class="light light--close" type="button" data-action="close" aria-label="Fermer"><svg><use href="#i-x"/></svg></button>
+            <button class="light light--min" type="button" data-action="min" aria-label="Réduire"><svg><use href="#i-min"/></svg></button>
+            <button class="light light--max" type="button" data-action="max" aria-label="Agrandir"><svg><use href="#i-max"/></svg></button>
+          </div>
+          <button class="window__back" type="button" data-action="close">‹ Accueil</button>
+          <h2 class="window__title" id="t-terminal">emmanuela — zsh</h2>
+        </div>
+        <div class="window__body term" id="term" tabindex="-1">
+          <div class="term__out" id="term-out" aria-live="polite"></div>
+          <form class="term__form" id="term-form">
+            <label class="term__prompt" for="term-input">emmanuela@abidjan ~ %</label>
+            <input class="term__input" id="term-input" type="text" autocomplete="off" autocapitalize="off" spellcheck="false">
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- Dock -->
+    <nav class="dock" aria-label="Applications">
+      <button class="dock__item" type="button" data-open="apropos" data-dock="apropos" aria-label="À propos">
+        <span class="tile tile--notes" aria-hidden="true"><svg><use href="#i-notes"/></svg></span>
+        <span class="dock__tip" aria-hidden="true">À propos</span><span class="dock__run"></span>
+      </button>
+      <button class="dock__item" type="button" data-open="projets" data-dock="projets" aria-label="Projets">
+        <span class="tile tile--yellow" aria-hidden="true"><span class="tile__text">{ }</span></span>
+        <span class="dock__tip" aria-hidden="true">Projets</span><span class="dock__run"></span>
+      </button>
+      <button class="dock__item" type="button" data-open="delices" data-dock="delices" aria-label="Les Délices des 3A">
+        <span class="tile tile--black" aria-hidden="true"><svg><use href="#i-sweets"/></svg></span>
+        <span class="dock__tip" aria-hidden="true">Les Délices des 3A</span><span class="dock__run"></span>
+      </button>
+      <button class="dock__item" type="button" data-open="contact" data-dock="contact" aria-label="Contact">
+        <span class="tile tile--white" aria-hidden="true"><svg><use href="#i-mail"/></svg></span>
+        <span class="dock__tip" aria-hidden="true">Contact</span><span class="dock__run"></span>
+      </button>
+      <span class="dock__sep" aria-hidden="true"></span>
+      <button class="dock__item dock__item--desk" type="button" data-open="terminal" data-dock="terminal" aria-label="Terminal">
+        <span class="tile tile--black" aria-hidden="true"><span class="tile__mono">&gt;_</span></span>
+        <span class="dock__tip" aria-hidden="true">Terminal</span><span class="dock__run"></span>
+      </button>
+    </nav>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
