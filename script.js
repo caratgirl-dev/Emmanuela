@@ -10,8 +10,8 @@ const EMAIL = 'ton.email@exemple.com';
 // image : chemin vers une capture (ex. 'images/projet-1.jpg'), laisse '' pour l'aperçu jaune/blanc.
 const PROJETS = [
   {
-    nom: "[Yopougon l'avenir d'Abidjan]",
-    type: '[Web]',
+    nom: "Yopougon l'avenir d'Abidjan",
+    type: 'Web',
     annee: '[2025]',
     defi: '[Présenter la commune de Yopougon et en faire la promotion touristique.]',
     solution: '[Création d’un site web interactif présentant les attractions touristiques, les événements culturels et les services locaux. Mon rôle : développeuse front-end, intégration des contenus et optimisation de l’expérience utilisateur.]',
@@ -21,8 +21,8 @@ const PROJETS = [
     code: 'https://github.com/caratgirl-dev/Yopougon-l-avenir-de-yopougon.git'
   },
   {
-    nom: '[Light Crepes]',
-    type: '[Web]',
+    nom: 'Light Crepes',
+    type: 'Web',
     annee: '[2025]',
     defi: '[Afficher les produits de la pâtisserie en ligne et permettre aux clients de passer des commandes facilement.]',
     solution: "[Developpement d'un site vitrine pour la patisserie Light Crepes , mon rôle : intégration des contenus, mise en place d’un formulaire de contact et optimisation de la navigation.]",
@@ -32,8 +32,8 @@ const PROJETS = [
     code: 'https://github.com/caratgirl-dev/LIGHT-CREPES'
   },
   {
-    nom: '[Les Délices des 3A]',
-    type: '[e-commerce]',
+    nom: 'Les Délices des 3A',
+    type: 'E-commerce',
     annee: '[2026]',
     defi: '[Créer une patisserie en ligne spécialisée en mignardises.]',
     solution: '[Creation du branding, du logo et de l’identité visuelle. Gestion des réseaux sociaux et de la communication. Mon rôle : cofondatrice, responsable marketing et communication.]',
@@ -42,12 +42,13 @@ const PROJETS = [
     lien: 'https://www.instagram.com/les_delices_des_3a?utm_source=ig_web_button_share_sheet&srtk=ZDNlZDc0MzIxNw=='
   },
   {
-    nom: '[Blac Joyaux]',
-    type: '[Web]',
+    nom: 'Blac Joyaux',
+    type: 'Web',
     annee: '[2026]',
-    defi: '[Rebranding du site web de la marque de sacs Blac Joyau.]',
-    solution: '[Refonte complète du site web, amélioration de l’expérience utilisateur et optimisation du référencement. Mon rôle : développeuse front-end, intégration des contenus et mise en place d’un système de paiement sécurisé.]',
+    defi: 'Rebranding du site web de la marque de sacs Blac Joyau.',
+    solution: 'Refonte complète du site web, amélioration de l’expérience utilisateur et optimisation du référencement. Mon rôle : développeuse front-end, intégration des contenus et mise en place d’un système de paiement sécurisé.',
     technos: ['[Tailwind CSS]', '[Laravel]', '[PHP]'],
+    lien: 'https://github.com/Esther-Anato/blac_joyaux',
     image: 'images/blac-joyau.jpg',
     code: 'https://github.com/Esther-Anato/blac_joyaux'
   }
